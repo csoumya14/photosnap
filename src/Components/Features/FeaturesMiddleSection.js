@@ -6,16 +6,29 @@ const SectionContainer = styled.section`
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const FigureContainer = styled.div`
-  width: 19.375rem;
+@media only screen and (max-width: 420px)  {
+  width: 20.375rem;
   height: 104.688rem;
   margin-top: 4rem;
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    width: 20.375rem;
+    height: 104.688rem;
+    margin-top: 4rem;
+  }
 `;
 
 const Figure = styled.figure`
-  width: 19.375rem;
   height: 14.75rem;
   display: flex;
   flex-direction: column;

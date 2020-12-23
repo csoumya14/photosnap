@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import menu from './assets/shared/mobile/menu.svg';
@@ -36,7 +36,6 @@ const Container = styled.div`
     text-decoration: none;
     font-size: 15px;
     font-weight: 700;
-
     color: black;
     letter-spacing: 2.5px;
     margin-bottom: 1.25rem;
@@ -66,6 +65,11 @@ const Container = styled.div`
     color: #fff;
     background: #000;
   }
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    .line {
+      width: 29.375rem;  
+    }
+  }
 `;
 const Logo = styled.img`
   width: 10.625rem;
@@ -80,6 +84,9 @@ const HamburgerImg = styled.input`
   margin-right: 2rem;
   opacity: ${({ isOpen }) => (isOpen ? '0' : '1')};
   transition: opacity ease-in-out 0.5s;
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    margin-right: 5rem;
+  }
 `;
 const CloseImg = styled.input`
   position: absolute;
@@ -89,15 +96,13 @@ const CloseImg = styled.input`
   margin-left: 20.513rem;
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transition: opacity ease-in-out 0.5s;
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    margin-left: 28rem;
+  }
 `;
 
-const NavBar = () => {
+const NavBar = ({ isOpen, toggleNav }) => {
   const [isSmallScreen] = useViewPort();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleNav = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <Container>

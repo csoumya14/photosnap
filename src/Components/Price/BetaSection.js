@@ -8,7 +8,7 @@ const Container = styled.section`
     width: 100vw;
     max-width: 100%;
     height: 18rem;
-    margin-top: 6.6875rem;
+    margin-top: 5.031rem;
 
     background-image: url(${betaImage});
     background-size: cover;
@@ -24,8 +24,8 @@ const Container = styled.section`
     .heading {
       color: #ffffff;
       font-size: 32px;
-      width: 19.375rem;
       line-height: 2.5rem;
+      width: 19.375rem;
       letter-spacing: 0.208rem;
       text-transform: uppercase;
       margin-top: 4rem;
@@ -58,22 +58,28 @@ const Container = styled.section`
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     width: 100vw;
     max-width: 100%;
-    height: 22rem;
-    margin-top: 6.6875rem;
+    height: 25rem;
+    margin-top: 8.031rem;
 
     background-image: url(${betaImage});
     background-size: cover;
     display: flex;
     flex-direction: column;
-
+    .pink-rectangle {
+      width: 128px;
+      height: 6px;
+      left: 33px;
+      position: absolute;
+      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
+    }
     .heading {
       color: #ffffff;
       font-size: 32px;
-      width: 19.375rem;
       line-height: 2.5rem;
+      width: 19.375rem;
       letter-spacing: 0.208rem;
       text-transform: uppercase;
-      margin-top: 7rem;
+      margin-top: 4rem;
       margin-left: 2.0625rem;
     }
     .link {

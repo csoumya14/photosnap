@@ -1,26 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
-import responsive from '../assets/features/desktop/responsive.svg';
-import photoUploadLimit from '../assets/features/desktop/no-limit.svg';
-import embed from '../assets/features/desktop/embed.svg';
 
 const CharContainer = styled.section`
   @media only screen and (max-width: 420px) {
     margin-top: 5rem;
   }
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    margin-top: 5rem;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    margin-top: 120px;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    margin-top: 120px;
+  }
 `;
 
-const ResponsiveDiv = styled.div`
+const Figure = styled.figure`
   @media only screen and (max-width: 420px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .heading {
+    margin-bottom: 56px;
+    .caption {
       margin-top: 3rem;
       font-size: 18px;
       line-height: 25px;
     }
-    .para {
+    .text {
       font-size: 15px;
       line-height: 25px;
       text-align: center;
@@ -28,19 +38,17 @@ const ResponsiveDiv = styled.div`
       margin-top: 0px;
     }
   }
-`;
-const UploadLimitDiv = styled.div`
-  @media only screen and (max-width: 420px) {
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3.5rem;
-    .heading {
+    margin-bottom: 56px;
+    .caption {
       margin-top: 3rem;
       font-size: 18px;
       line-height: 25px;
     }
-    .para {
+    .text {
       font-size: 15px;
       line-height: 25px;
       text-align: center;
@@ -48,56 +56,58 @@ const UploadLimitDiv = styled.div`
       margin-top: 0px;
     }
   }
-`;
-
-const EmbedDiv = styled.div`
-  @media only screen and (max-width: 420px) {
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3.5rem;
-    .heading {
-      margin-top: 3rem;
+    margin-bottom: 80px;
+    .caption {
+      margin-top: 48px;
+      font-weight: 700;
       font-size: 18px;
       line-height: 25px;
     }
-    .para {
+    .text {
       font-size: 15px;
       line-height: 25px;
       text-align: center;
-      width: 19.375rem;
-      margin-top: 0px;
+      width: 457px;
+      margin-top: 16px;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .caption {
+      margin-top: 48px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 25px;
+    }
+    .text {
+      font-size: 15px;
+      line-height: 25px;
+      text-align: center;
+      width: 457px;
+      margin-top: 16px;
     }
   }
 `;
 
-const CharSection = () => {
+const CharSection = ({ feature }) => {
   return (
     <CharContainer>
-      <ResponsiveDiv>
-        <img src={responsive} alt="" />
-        <h4 className="heading">100% Responsive</h4>
-        <p className="para">
-          No matter which the device you're on, our site is fully responsive and stories look
-          beautiful on any screen
-        </p>
-      </ResponsiveDiv>
-      <UploadLimitDiv>
-        <img src={photoUploadLimit} alt="" />
-        <h4 className="heading">No Photo Upload Limit</h4>
-        <p className="para">
-          Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of
-          your stories in one go.
-        </p>
-      </UploadLimitDiv>
-      <EmbedDiv>
-        <img src={embed} alt="" />
-        <h4 className="heading">Available to Embed</h4>
-        <p className="para">
-          Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and
-          more.
-        </p>
-      </EmbedDiv>
+      {feature.slice(0, 3).map((ftr) => {
+        return (
+          <Figure key={ftr.id}>
+            <img src={ftr.featureImage} alt="" />
+            <figcaption className="caption">{ftr.featureTitle}</figcaption>
+            <p className="text">{ftr.featureText}</p>
+          </Figure>
+        );
+      })}
     </CharContainer>
   );
 };

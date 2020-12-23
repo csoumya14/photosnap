@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import FirstSection from './StoriesFirstSection';
 import MiddleSection from './StoriesMiddleSection';
 import PhotoSection from './StoriesPhotoSection';
-import BottomSection from '../Home/BottomSection';
+import BottomSection from './StoriesBottomSection';
 
 const Container = styled.div`
   @media only screen and (max-width: 420px) {
+    width: 100vw;
+    max-width: 100%;
+  }
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
     width: 100vw;
     max-width: 100%;
   }

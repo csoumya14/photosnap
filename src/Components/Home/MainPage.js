@@ -10,18 +10,22 @@ import BottomSection from './BottomSection';
 const Container = styled.div`
   @media only screen and (max-width: 420px) {
     width: 100vw;
-    max-width: 100%;
+    min-width: 100%;
+  }
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    width: 100vw;
+    min-width: 100%;
   }
 `;
 
-const MainPage = ({ image }) => {
+const MainPage = ({ image, feature }) => {
   return (
     <Container>
       <TopSection />
       <MiddleSection />
       <SecondMiddleSection />
       <PhotoSection image={image} />
-      <CharSection />
+      <CharSection feature={feature} />
       <BottomSection />
     </Container>
   );

@@ -42,36 +42,28 @@ const ToggleSwitch = styled.div`
   }
   .toggle-switch-inner {
     display: block;
-
     width: 200%;
     height: 24px;
     margin-left: -100%;
     transition: margin 0.3s ease-in 0s;
-    background: red;
+
     &:before,
     &:after {
       display: block;
       float: left;
       width: 50%;
       height: 34px;
-      background: cyan;
       padding: 0;
-      line-height: 34px;
-      font-size: 14px;
-      color: white;
-      font-weight: bold;
       box-sizing: border-box;
     }
     &:before {
       content: '';
-
-      background-color: #f90;
+      background-color: #dfdfdf;
     }
   }
   .toggle-switch-inner:after {
     content: '';
-    background-color: #bbb;
-
+    background-color: #dfdfdf;
     text-align: right;
   }
   .toggle-switch-switch {
@@ -96,6 +88,9 @@ const ToggleSwitch = styled.div`
       transform: translate(calc(3.7em - 100%), -50%);
     }
   }
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    margin-left: 130px;
+  }
 `;
 
 const ToggleTextMonthly = styled.p`
@@ -108,12 +103,133 @@ const ToggleTextYearly = styled(ToggleTextMonthly)`
   opacity: ${({ checked }) => (checked ? '1' : '0.5')};
 `;
 
+const Article = styled.article`
+  @media only screen and (max-width: 420px) {
+    width: 19.875rem;
+    height: 26.438rem;
+    text-align: center;
+    background: #f5f5f5;
+    margin-bottom: 1.5rem;
+    .article-heading {
+      font-size: 24px;
+      line-height: 1.563rem;
+      margin-top: 3.5rem;
+    }
+    .article-para {
+      width: 275px;
+      font-size: 15px;
+      line-height: 25px;
+      margin-left: 1.313rem;
+      opacity: 0.6;
+    }
+    .rate {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 0.26rem;
+      margin-top: 2.5rem;
+    }
+    .article-plan {
+      font-size: 15px;
+      line-height: 25px;
+      font-weight: 400;
+      letter-spacing: 0rem;
+      margin-top: 0rem;
+      opacity: 0.6;
+    }
+    .article-button {
+      width: 15.313rem;
+      height: 2.5rem;
+      margin-top: 2.188rem;
+
+      background: #000000;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border: none;
+    }
+  }
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    width: 19.875rem;
+    height: 26.438rem;
+    text-align: center;
+    background: #f5f5f5;
+    margin-bottom: 1.5rem;
+    .article-heading {
+      font-size: 24px;
+      line-height: 1.563rem;
+      margin-top: 3.5rem;
+    }
+    .article-para {
+      width: 275px;
+      font-size: 15px;
+      line-height: 25px;
+      margin-left: 1.313rem;
+      opacity: 0.6;
+    }
+    .rate {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 0.26rem;
+      margin-top: 2.5rem;
+    }
+    .article-plan {
+      font-size: 15px;
+      line-height: 25px;
+      font-weight: 400;
+      letter-spacing: 0rem;
+      margin-top: 0rem;
+      opacity: 0.6;
+    }
+    .article-button {
+      width: 15.313rem;
+      height: 2.5rem;
+      margin-top: 2.188rem;
+
+      background: #000000;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border: none;
+    }
+  }
+`;
+
 const PriceCardContainer = styled.div`
   @media only screen and (max-width: 420px) {
     width: 100vw;
     max-width: 100%;
+    margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    ${Article}:nth-child(2) {
+      background: #000000;
+      color: #ffffff;
+      .article-button {
+        background: #ffffff;
+        color: #000000;
+      }
+    }
+  }
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    width: 100vw;
+    max-width: 100%;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ${Article}:nth-child(2) {
+      background: #000000;
+      color: #ffffff;
+      .article-button {
+        background: #ffffff;
+        color: #000000;
+      }
+    }
   }
 `;
 
@@ -152,16 +268,25 @@ const ToggleSwitchSection = ({ name, checked, onChange, cardInfo }) => {
       <PriceCardContainer>
         {cardInfo.map((info) => {
           return (
-            <article key={info.id}>
-              <h3>{info.title}</h3>
-              <p>{info.text}</p>
-              <div>
-                <span>{info.dollarSign}</span>
-                <span>{info.monthlyRate}</span>
-              </div>
-              <p className="text">{info.planMonth}</p>
-              <button>{info.buttonText}</button>
-            </article>
+            <Article key={info.id}>
+              <h3 className="article-heading">{info.title}</h3>
+              <p className="article-para">{info.text}</p>
+              {!checked ? (
+                <div className="rate">
+                  <span>{'\u0024'}</span>
+                  <span className="article-rate">{info.monthlyRate}</span>
+                  <p className="article-plan">{info.planMonth}</p>
+                </div>
+              ) : (
+                <div className="rate">
+                  <span>{'\u0024'}</span>
+                  <span className="article-rate">{info.yearlyRate}</span>
+                  <p className="article-plan">{info.planYear}</p>
+                </div>
+              )}
+
+              <button className="article-button">{info.buttonText}</button>
+            </Article>
           );
         })}
       </PriceCardContainer>
@@ -170,19 +295,3 @@ const ToggleSwitchSection = ({ name, checked, onChange, cardInfo }) => {
 };
 
 export default ToggleSwitchSection;
-/*
-{cardInfo.map((info) => {
-          return (
-            <article key={info.id}>
-              <h3>{info.title}</h3>
-              <p>{info.text}</p>
-              <div>
-                <span>{info.dollarSign}</span>
-                <span>{info.monthlyRate}</span>
-              </div>
-              <p className="text">{info.planMonth}</p>
-              <button>{info.buttonText}</button>
-            </article>
-          );
-        })}
-        */

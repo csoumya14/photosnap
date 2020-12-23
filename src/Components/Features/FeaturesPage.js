@@ -10,6 +10,10 @@ const Container = styled.div`
     width: 100vw;
     max-width: 100%;
   }
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    width: 100vw;
+    max-width: 100%;
+  }
 `;
 
 const FeaturesPage = ({ feature }) => {
