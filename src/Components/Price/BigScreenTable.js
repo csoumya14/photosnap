@@ -3,21 +3,40 @@ import styled from 'styled-components';
 import RowItem from './RowItem';
 
 const Table = styled.table`
-  width: 318px;
-  height: 952px;
-  margin-left: 29px;
-  border: 1px solid black;
+  width: 100%;
+  height: 552px;
+  .row-heading {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: left;
+    letter-spacing: 2px;
+    line-height: 16px;
+  }
+  .feature-heading {
+    padding-left: 24px;
+  }
+  .row-heading th {
+    padding-bottom: 16px;
+    border-bottom: 1px solid black;
+  }
+  .heading {
+    width: 120px;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 50%;
+  }
 `;
 
 const BigScreenTableSection = () => {
   return (
     <Table>
       <thead>
-        <tr>
-          <th>the features</th>
-          <th>basic</th>
-          <th>pro</th>
-          <th>business</th>
+        <tr className="row-heading">
+          <th className="feature-heading">the features</th>
+          <th className="heading">basic</th>
+          <th className="heading">pro</th>
+          <th className="heading">business</th>
         </tr>
       </thead>
       <tbody>

@@ -1,37 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import arrow from '../assets/shared/desktop/arrow.svg';
-import createAndShareImg from '../assets/home/mobile/create-and-share.jpg';
-import bigScreenImg from '../assets/home/desktop/create-and-share.jpg';
+import hero from '../assets/home/mobile/create-and-share.jpg';
+import desktopImg from '../assets/home/desktop/create-and-share.jpg';
+import tabScreenImg from '../assets/home/tablet/create-and-share.jpg';
 import { useViewPort } from '../CustomViewPort';
 
 const FirstSectionContainer = styled.div`
-  @media only screen and (max-width: 420px) {
-    display: flex;
-    flex-direction: column;
-    .pink-rectangle {
-      position: absolute;
-      width: 128px;
-      height: 6px;
-      left: 33px;
-      top: 22.3rem;
-      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
-    }
-  }
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
-  }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 100vw;
+    height: 650px;
+    max-width: 100%;
     display: grid;
-    grid-template-columns: minmax(495px, auto) minmax(273px, auto);
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
-    height: 650px;
+    border: 1px solid red;
+    grid-template-areas: '. .';
   }
   @media only screen and (min-width: 1024px) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.3fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     height: 650px;
@@ -39,10 +28,9 @@ const FirstSectionContainer = styled.div`
 `;
 const ImageSection = styled.div`
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    object-fit: cover;
+    grid-row: 1/2;
+    grid-column-start: 2/3;
     overflow: hidden;
   }
   @media only screen and (min-width: 1024px) {
@@ -50,158 +38,132 @@ const ImageSection = styled.div`
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
+    height: 650px;
   }
 `;
-const CreateImg = styled.img`
-  @media only screen and (max-width: 420px) {
-    object-fit: cover;
-    height: 18.375rem;
-  }
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    width: 100vw;
-    object-fit: cover;
-    height: 20.375rem;
-  }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    object-fit: contain;
-    margin-left: -35vw;
-  }
-  @media only screen and (min-width: 1024px) {
-    object-fit: cover;
-  }
-`;
-const FirstSection = styled.section`
-  @media only screen and (max-width: 420px) {
-    display: flex;
-    flex-direction: column;
+
+const FirstSectionText = styled.section`
+  @media only screen and (max-width: 767px) {
     height: 26.2rem;
-    margin-top: -0.5rem;
-    background-color: #000;
-    color: white;
-    .heading1 {
-      margin-top: 5rem;
-      margin-left: 2.06rem;
-      width: calc(100% - 70px);
-      height: 120px;
-      font-size: 32px;
-      line-height: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 3.33333px;
-      text-transform: uppercase;
-    }
-    .para1 {
-      width: calc(100% - 70px);
-      font-size: 15px;
-      font-weight: 400;
-      opacity: 0.6;
-      line-height: 25px;
-      margin-left: 2.06rem;
-      margin-top: 1rem;
-    }
-    .link1 {
-      text-decoration: none;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 12px;
-      margin-left: 2.06rem;
-      line-height: 16px;
-      letter-spacing: 2px;
-      height: 1rem;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
-    }
-    .arrow-image {
-      width: 2.63rem;
-      margin-top: 0.1rem;
+    margin-top: -0.3rem;
+    background-color: #000000;
+    .pink-rectangle {
       position: absolute;
-      margin-left: 1rem;
-      height: 0.75rem;
-      filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg) brightness(1);
-    }
-  }
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
-    height: 26.2rem;
-    margin-top: -0.5rem;
-    background-color: #000;
-    color: white;
-    .heading1 {
-      margin-top: 5rem;
-      margin-left: 2.06rem;
-      width: 12.438em;
-      height: 120px;
-      font-size: 32px;
-      line-height: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 3.33333px;
-      text-transform: uppercase;
-    }
-    .para1 {
-      width: 375px;
-      font-size: 15px;
-      font-weight: 400;
-      opacity: 0.6;
-      line-height: 25px;
-      margin-left: 2.06rem;
-      margin-top: 1rem;
-    }
-    .link1 {
-      text-decoration: none;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 12px;
-      margin-left: 2.06rem;
-      line-height: 16px;
-      letter-spacing: 2px;
-      height: 1rem;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
-    }
-    .arrow-image {
-      width: 2.63rem;
-      margin-top: 0.1rem;
-      position: absolute;
-      margin-left: 3rem;
-      height: 0.75rem;
-      filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg) brightness(1);
+      width: 128px;
+      height: 6px;
+      left: 33px;
+      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    width: 495px;
+    margin-top: 0px;
     background: #000000;
     color: #ffffff;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 2;
+    .pink-rectangle {
+      position: absolute;
+      width: 6px;
+      height: 304px;
+      left: 0px;
+      margin-top: 174px;
+      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
+    }
   }
   @media only screen and (min-width: 1024px) {
     background: #000000;
     color: #ffffff;
+    margin-top: 0rem;
+    height: 650px;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 2;
+    .pink-rectangle {
+      position: absolute;
+      width: 6px;
+      height: 304px;
+      left: 0px;
+      margin-top: 174px;
+      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
+    }
   }
 `;
 const TextSection = styled.div`
-  @media only screen and (min-width: 768px) {
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  .heading1 {
+    margin-top: 5rem;
+    margin-left: 2.06rem;
+    width: calc(100% - 70px);
+    height: 120px;
+    font-size: 32px;
+    line-height: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 3.33333px;
+    text-transform: uppercase;
+  }
+  .para1 {
+    width: calc(100% - 70px);
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.6;
+    line-height: 25px;
+    margin-left: 2.06rem;
+    margin-top: 0rem;
+  }
+  .link1 {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    margin-left: 2.06rem;
+    line-height: 16px;
+    letter-spacing: 2px;
+    height: 1rem;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+  .arrow-image {
+    width: 2.63rem;
+    margin-top: 0.1rem;
+    position: absolute;
+    margin-left: 1rem;
+    height: 0.75rem;
+    filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg) brightness(1);
+  }
+
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    .pink-rectangle {
+      margin-left: 53px;
+    }
+    .heading1 {
+      width: 12.438em;
+    }
+    .para1 {
+      width: 375px;
+    }
+    .arrow-image {
+      margin-left: 3rem;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
     width: 387px;
     height: 304px;
-    margin-top: 173px;
-    margin-left: 54px;
+    margin-top: 80px;
+    margin-left: 44px;
     margin-right: 54px;
     margin-bottom: 173px;
-    .heading1 {
-      margin-top: 5rem;
 
+    .heading1 {
+      margin-top: 6rem;
       width: 387px;
       height: 144px;
       font-size: 40px;
@@ -216,8 +178,7 @@ const TextSection = styled.div`
       font-weight: 400;
       opacity: 0.6;
       line-height: 25px;
-
-      margin-top: 21px;
+      margin-top: 0rem;
     }
     .link1 {
       text-decoration: none;
@@ -225,7 +186,7 @@ const TextSection = styled.div`
       text-transform: uppercase;
       font-weight: 700;
       font-size: 12px;
-      margin-top: 48px;
+      margin-top: 25px;
       line-height: 16px;
       letter-spacing: 2px;
       height: 1rem;
@@ -250,20 +211,17 @@ const TopSection = () => {
   return (
     <FirstSectionContainer>
       <ImageSection>
-        {isSmallScreen ? (
-          <CreateImg
-            src={createAndShareImg}
-            alt="image of a man viewing scenery of lake and mountains"
-          />
-        ) : (
-          <CreateImg
-            src={bigScreenImg}
-            alt="image of a man viewing scenery of lake and mountains"
-          />
-        )}
+        <picture className="picture">
+          <source media="(min-width:1024px)" srcSet={desktopImg}></source>
+          <source media="(min-width:500px)" srcSet={tabScreenImg}></source>
+          <img
+            src={hero}
+            alt=" a woman holding camera during sunset or sunrise"
+            className="hero-image"
+          ></img>
+        </picture>
       </ImageSection>
-
-      <FirstSection>
+      <FirstSectionText>
         <div className="pink-rectangle"></div>
         <TextSection>
           <h1 className="heading1"> Create and share your photo Stories.</h1>
@@ -278,7 +236,7 @@ const TopSection = () => {
             </span>
           </a>
         </TextSection>
-      </FirstSection>
+      </FirstSectionText>
     </FirstSectionContainer>
   );
 };

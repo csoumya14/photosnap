@@ -125,7 +125,7 @@ const NavBar = ({ isOpen, toggleNav }) => {
         onClick={toggleNav}
         isOpen={isOpen}
       />
-      {!isSmallScreen && isOpen && (
+      {isSmallScreen && isOpen && (
         <nav className="menu" id="dropdown1">
           <ul tabIndex="-1" className="u-link">
             <li className="list-items">

@@ -1,29 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
-import designForEveryone from '../assets/home/mobile/designed-for-everyone.jpg';
-import bigScreenImg from '../assets/home/desktop/designed-for-everyone.jpg';
+import hero from '../assets/home/mobile/designed-for-everyone.jpg';
+import desktopImg from '../assets/home/desktop/designed-for-everyone.jpg';
+import tabScreenImg from '../assets/home/tablet/designed-for-everyone.jpg';
 import arrow from '../assets/shared/desktop/arrow.svg';
-import { useViewPort } from '../CustomViewPort';
 
 const SecondSectionContainer = styled.div`
-  @media only screen and (max-width: 420px) {
-    display: flex;
-    flex-direction: column;
-  }
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 100vw;
+    height: 600px;
+    max-width: 100%;
     display: grid;
-    grid-template-columns: minmax(387px, auto) minmax(273px, auto);
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
-    height: 600px;
+    border: 1px solid red;
+    grid-template-areas: '. .';
   }
   @media only screen and (min-width: 1024px) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.3fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     height: 600px;
@@ -43,123 +42,64 @@ const ImageContainer = styled.div`
     grid-column-end: 3;
   }
 `;
-const DesignedEveryoneImg = styled.img`
-  @media only screen and (max-width: 420px) {
-    width: 100vw;
-    max-width: 100%;
-    object-fit: cover;
-    height: 16.9375rem;
-  }
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    width: 100vw;
-    max-width: 100%;
-    object-fit: cover;
-    height: 25.9375rem;
-  }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    width: 273px;
 
-    object-fit: cover;
-    height: 600px;
-  }
-`;
 const ThirdSection = styled.div`
-  @media only screen and (max-width: 420px) {
-    width: 100vw;
-    height: 26.2rem;
-    display: flex;
-    flex-direction: column;
-    color: #000000;
-    .heading3 {
-      margin-top: 5rem;
-      margin-left: 2.06rem;
-      width: 19.8rem;
-      height: 5rem;
-      font-size: 32px;
-      line-height: 40px;
-      font-weight: 700;
-      letter-spacing: 3.33333px;
-      text-transform: uppercase;
-    }
-    .para3 {
-      width: 19.9rem;
-      font-size: 15px;
-      font-weight: 400;
-      opacity: 0.6;
-      line-height: 25px;
-      margin-left: 2.06rem;
-      margin-top: 0rem;
-    }
-    .link3 {
-      text-decoration: none;
-      color: #000;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 12px;
-      margin-left: 2.06rem;
-      line-height: 16px;
-      letter-spacing: 2px;
-      height: 1rem;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
-    }
-    .arrow-image {
-      width: 2.63rem;
-      margin-top: 0.1rem;
-      position: absolute;
-      margin-left: 1rem;
-      height: 0.75rem;
+  height: 26.2rem;
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+  .heading3 {
+    margin-top: 5rem;
+    margin-left: 2.06rem;
+    width: 19.8rem;
+    height: 5rem;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    letter-spacing: 3.33333px;
+    text-transform: uppercase;
+  }
+  .para3 {
+    width: 19.9rem;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.6;
+    line-height: 25px;
+    margin-left: 2.06rem;
+    margin-top: 0rem;
+  }
+  .link3 {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    margin-left: 2.06rem;
+    line-height: 16px;
+    letter-spacing: 2px;
+    height: 1rem;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
   }
+  .arrow-image {
+    width: 2.63rem;
+    margin-top: 0.1rem;
+    position: absolute;
+    margin-left: 1rem;
+    height: 0.75rem;
+  }
+
   @media only screen and (min-width: 421px) and (max-width: 767px) {
-    width: 100vw;
-    height: 26.2rem;
-    display: flex;
-    flex-direction: column;
-    color: #000000;
     .heading3 {
-      margin-top: 5rem;
-      margin-left: 2.06rem;
-      width: 25rem;
       height: 5rem;
-      font-size: 32px;
-      line-height: 40px;
-      font-weight: 700;
-      letter-spacing: 3.33333px;
-      text-transform: uppercase;
     }
     .para3 {
       width: 25.9rem;
-      font-size: 15px;
-      font-weight: 400;
-      opacity: 0.6;
-      line-height: 25px;
-      margin-left: 2.06rem;
-      margin-top: 0rem;
-    }
-    .link3 {
-      text-decoration: none;
-      color: #000;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 12px;
-      margin-left: 2.06rem;
-      line-height: 16px;
-      letter-spacing: 2px;
-      height: 1rem;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
     }
     .arrow-image {
-      width: 2.63rem;
-      margin-top: 0.1rem;
-      position: absolute;
       margin-left: 3rem;
-      height: 0.75rem;
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -252,7 +192,7 @@ const ThirdSection = styled.div`
       text-transform: uppercase;
       font-weight: 700;
       font-size: 12px;
-      margin-top: 48px;
+      margin-top: 40px;
       margin-left: 112px;
       line-height: 16px;
       letter-spacing: 2px;
@@ -273,23 +213,18 @@ const ThirdSection = styled.div`
 `;
 
 const SecondMiddleSection = () => {
-  const [isSmallScreen] = useViewPort();
   return (
     <SecondSectionContainer>
       <ImageContainer>
-        {isSmallScreen ? (
-          <DesignedEveryoneImg
-            src={designForEveryone}
-            alt="an image of a man holding a professional camera"
-          />
-        ) : (
-          <div className="image-container">
-            <DesignedEveryoneImg
-              src={bigScreenImg}
-              alt="an image of a man holding a professional camera"
-            />
-          </div>
-        )}
+        <picture className="picture">
+          <source media="(min-width:1024px)" srcSet={desktopImg}></source>
+          <source media="(min-width:500px)" srcSet={tabScreenImg}></source>
+          <img
+            src={hero}
+            alt=" a woman holding camera during sunset or sunrise"
+            className="hero-image"
+          ></img>
+        </picture>
       </ImageContainer>
       <ThirdSection>
         <h1 className="heading3">Designed For Everyone</h1>

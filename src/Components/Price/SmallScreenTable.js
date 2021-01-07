@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import check from '../assets/pricing/desktop/check.svg';
 
 const TableSection = styled.section`
-  width: 318px;
+  width: 90%;
   height: 952px;
   margin-left: 29px;
 
@@ -25,7 +25,7 @@ const TableSection = styled.section`
 `;
 
 const Table = styled.table`
-  width: 318px;
+  width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
 

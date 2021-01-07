@@ -14,6 +14,21 @@ const TableContainer = styled.section`
       display: none;
     }
   }
+  @media only screen and (min-width: 768px) {
+    width: 100vw;
+    max-width: 100%;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .container-heading {
+      text-transform: uppercase;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+      letter-spacing: 4.16667px;
+    }
+  }
 `;
 
 const TableSection = () => {
@@ -26,7 +41,7 @@ const TableSection = () => {
       <div className="container-heading">
         <h1>Compare</h1>
       </div>
-      {!isSmallScreen ? (
+      {isSmallScreen ? (
         <SmallScreenTableSection tableData={tableData} />
       ) : (
         <BigScreenTableSection />

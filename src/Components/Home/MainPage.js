@@ -8,13 +8,11 @@ import CharSection from './CharacteristicsSection';
 import BottomSection from './BottomSection';
 
 const Container = styled.div`
-  @media only screen and (max-width: 420px) {
+  width: 100vw;
+  max-width: 100%;
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
     width: 100vw;
-    min-width: 100%;
-  }
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    width: 100vw;
-    min-width: 100%;
+    max-width: 100%;
   }
 `;
 
