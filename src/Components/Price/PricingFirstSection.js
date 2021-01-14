@@ -39,7 +39,7 @@ const SectionContainer = styled.section`
     grid-template-columns: 0.9fr 1.1fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
-    border: 1px solid red;
+
     grid-template-areas: '. .';
   }
 `;
