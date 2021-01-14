@@ -51,8 +51,8 @@ const SectionContainer = styled.section`
     color: white;
   }
   .para {
-    width: 19.875rem;
-    height: 9.375rem;
+    width: calc(100% - 70px);
+    height: 10.375rem;
     font-size: 15px;
     line-height: 25px;
     margin-left: 1.813rem;
@@ -64,8 +64,9 @@ const SectionContainer = styled.section`
     text-transform: uppercase;
     font-weight: 700;
     font-size: 12px;
+
     margin-left: 1.813rem;
-    padding-bottom: 3rem;
+    padding-top: 2rem;
     line-height: 16px;
     letter-spacing: 2px;
     height: 1rem;
@@ -84,9 +85,12 @@ const SectionContainer = styled.section`
   }
 
   @media only screen and (min-width: 421px) and (max-width: 767px) {
-    margin-top: -0.5rem;
     position: absolute;
+    width: 387px;
+    height: 650px;
+    margin-top: 5rem;
 
+    background: transparent;
     .heading {
       width: 25.875rem;
     }
@@ -127,6 +131,7 @@ const SectionContainer = styled.section`
 
     .para {
       width: 25.875rem;
+
       height: 6.375rem;
       margin-left: 0rem;
     }

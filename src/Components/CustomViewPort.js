@@ -4,7 +4,7 @@ export const useViewPort = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width:500px)');
+    const mediaQuery = window.matchMedia('(max-width:400px)');
     mediaQuery.addListener(handleMediaQueryChange);
     handleMediaQueryChange(mediaQuery);
 

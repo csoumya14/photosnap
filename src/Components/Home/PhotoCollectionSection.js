@@ -18,11 +18,12 @@ const PhotoContainer = styled.div`
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     display: grid;
     height: 750px;
-    border: 1px solid red;
+
     grid-template-columns: repeat(2, 50%);
     .image-link {
       height: 375px;
-      border: 1px solid green;
+
+      overflow: hidden;
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -98,21 +99,21 @@ const Figure = styled.div`
     font-size: 18px;
     line-height: 1.563rem;
     font-weight: 700;
-    padding-left: 2.063rem;
+    margin-left: 2.063rem;
   }
   .author {
     font-weight: 400;
     font-size: 13px;
     line-height: 16.93px;
     margin-top: 4px;
-    padding-left: 2.163rem;
+    margin-left: 2.163rem;
   }
 
   .line {
     height: 1px;
     width: 19.375rem;
     background: #fff;
-    padding-left: 2.063rem;
+    margin-left: 2.063rem;
     opacity: 0.75;
     margin-top: 16px;
   }
@@ -124,7 +125,7 @@ const Figure = styled.div`
     text-transform: uppercase;
     font-weight: 700;
     font-size: 12px;
-    padding-left: 2.06rem;
+    margin-left: 2.06rem;
     line-height: 15.62px;
     letter-spacing: 2px;
     height: 1rem;
@@ -137,13 +138,14 @@ const Figure = styled.div`
     width: 2.63rem;
     margin-top: 0.1rem;
     position: relative;
-    padding-left: 11.063rem;
+    margin-left: 11.063rem;
     height: 0.75rem;
     filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg) brightness(1);
   }
 
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     padding-top: 10px;
+
     .line {
       margin-top: 0px;
       width: 80%;
@@ -264,10 +266,12 @@ const ImageItem = styled.img`
   }
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     position: absolute;
-    width: 100%;
+    width: 50%;
     height: 375px;
     z-index: -1;
-    object-fit: contain;
+
+    object-fit: cover;
+
     filter: brightness(70%);
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {

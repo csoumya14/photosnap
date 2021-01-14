@@ -85,7 +85,7 @@ const TextSection = styled.section`
     .para {
       font-size: 15px;
       line-height: 25px;
-      width: 19.875rem;
+      width: calc(100% - 70px);
       height: 6.25rem;
       margin-left: 1.813rem;
       color: #ffffff;

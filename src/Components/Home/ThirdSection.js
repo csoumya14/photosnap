@@ -66,13 +66,13 @@ const ThirdSection = styled.div`
 const TextSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 2rem;
+  justify-content: space-around;
+  align-items: center;
+
   color: #000000;
 
   .heading3 {
-    width: 15.8rem;
+    width: calc(100% - 70px);
     height: 7.5rem;
     font-size: 32px;
     line-height: 40px;
@@ -82,7 +82,7 @@ const TextSection = styled.div`
   }
 
   .para3 {
-    width: 19.9rem;
+    width: calc(100% - 70px);
     font-size: 15px;
     font-weight: 400;
     opacity: 0.6;
@@ -92,7 +92,7 @@ const TextSection = styled.div`
 
   .link3 {
     text-decoration: none;
-    width: 22rem;
+    width: calc(100% - 70px);
     color: #000;
     text-transform: uppercase;
     font-weight: 700;
@@ -114,17 +114,6 @@ const TextSection = styled.div`
     height: 0.75rem;
   }
 
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    .heading3 {
-      width: 20.8rem;
-    }
-    .para3 {
-      width: 19.9rem;
-    }
-    .arrow-image {
-      margin-left: 3rem;
-    }
-  }
   @media only screen and (min-width: 768px) {
     height: 329px;
     width: 387px;
@@ -133,7 +122,7 @@ const TextSection = styled.div`
 
     .heading3 {
       height: 96px;
-      width: 90%;
+      width: 100%;
       font-size: 40px;
       line-height: 48px;
       letter-spacing: 4.16667px;
@@ -143,7 +132,7 @@ const TextSection = styled.div`
     }
 
     .link3 {
-      width: 205px;
+      width: 100%;
     }
 
     .arrow-image {

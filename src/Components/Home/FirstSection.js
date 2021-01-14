@@ -46,6 +46,17 @@ const ImageSection = styled.div`
 `;
 
 const FirstSectionText = styled.section`
+  background-color: #000000;
+  height: 490px;
+  margin-top: -5.5px;
+
+  .pink-rectangle {
+    position: absolute;
+    width: 128px;
+    height: 6px;
+    left: 33px;
+    background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
+  }
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     object-fit: cover;
     grid-row: 1/2;
@@ -53,13 +64,6 @@ const FirstSectionText = styled.section`
     height: 490px;
     overflow: hidden;
     background-color: #000000;
-    .pink-rectangle {
-      position: absolute;
-      width: 128px;
-      height: 6px;
-      left: 33px;
-      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
-    }
   }
   @media only screen and (min-width: 768px) {
     margin-top: 0px;
@@ -79,13 +83,14 @@ const FirstSectionText = styled.section`
   }
 `;
 const TextSection = styled.div`
+  align-self: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   color: white;
-
   .heading1 {
     margin-top: 5rem;
-    margin-left: 2.06rem;
     width: calc(100% - 70px);
     height: 120px;
     font-size: 32px;
@@ -100,16 +105,16 @@ const TextSection = styled.div`
     font-weight: 400;
     opacity: 0.6;
     line-height: 25px;
-    margin-left: 2.06rem;
-    margin-top: 0rem;
+
+    margin-top: 1rem;
   }
   .link1 {
     text-decoration: none;
+    width: calc(100% - 70px);
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 12px;
-    margin-left: 2.06rem;
     line-height: 16px;
     letter-spacing: 2px;
     height: 1rem;
@@ -132,14 +137,11 @@ const TextSection = styled.div`
     .pink-rectangle {
       margin-left: 53px;
     }
-    .heading1 {
-      width: 10.438em;
-    }
     .para1 {
-      width: 275px;
+      margin-top: 2rem;
     }
     .arrow-image {
-      margin-left: 3rem;
+      margin-left: 1rem;
     }
   }
   @media only screen and (min-width: 768px) {
@@ -160,11 +162,11 @@ const TextSection = styled.div`
     }
     .para1 {
       width: 387px;
-
       margin-top: 0rem;
     }
 
     .link1 {
+      width: 387px;
       margin-top: 25px;
     }
 

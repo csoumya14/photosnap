@@ -32,8 +32,15 @@ const ImageSection = styled.div`
   max-width: 100%;
   height: 317px;
   margin: 0px;
+  overflow: hidden;
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     border: 1px solid transparent;
+    position: absolute;
+    z-index: -1;
+    height: 650px;
+    object-fit: cover;
+    border: 1px solid transparent;
+    margin: 0px;
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     height: 650px;

@@ -255,6 +255,9 @@ const SocialIconContainer = styled.div`
     .logo-image {
       filter: sepia(100%) grayscale(100%) brightness(20);
     }
+    .logo-image:hover {
+      filter: none;
+    }
   }
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     width: 9.625rem;
@@ -266,6 +269,9 @@ const SocialIconContainer = styled.div`
     .logo-image {
       filter: sepia(100%) grayscale(100%) brightness(20);
     }
+    .logo-image:hover {
+      filter: none;
+    }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     width: 9.625rem;
@@ -276,6 +282,9 @@ const SocialIconContainer = styled.div`
     justify-content: space-between;
     .logo-image {
       filter: sepia(100%) grayscale(100%) brightness(20);
+    }
+    .logo-image:hover {
+      filter: none;
     }
     grid-row-start: 3;
     grid-row-end: 4;
@@ -293,6 +302,9 @@ const SocialIconContainer = styled.div`
     justify-content: space-between;
     .logo-image {
       filter: sepia(100%) grayscale(100%) brightness(20);
+    }
+    .logo-image:hover {
+      filter: none;
     }
     grid-row-start: 2;
     grid-row-end: 3;
@@ -325,6 +337,7 @@ const LinkContainer = styled.div`
       &:hover,
       &:focus {
         text-decoration: underline;
+        opacity: 0.3;
       }
     }
   }
@@ -348,6 +361,7 @@ const LinkContainer = styled.div`
       &:hover,
       &:focus {
         text-decoration: underline;
+        opacity: 0.3;
       }
     }
   }
@@ -377,6 +391,7 @@ const LinkContainer = styled.div`
       &:hover,
       &:focus {
         text-decoration: underline;
+        opacity: 0.3;
       }
     }
   }
@@ -404,6 +419,7 @@ const LinkContainer = styled.div`
       &:hover,
       &:focus {
         text-decoration: underline;
+        opacity: 0.3;
       }
     }
   }

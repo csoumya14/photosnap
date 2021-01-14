@@ -9,14 +9,43 @@ const PhotoContainer = styled.section`
   justify-content: center;
   margin-top: 0rem;
   max-width: 100%;
+
   .image-link {
     text-decoration: none;
     height: 375px;
   }
   @media only screen and (min-width: 421px) and (max-width: 767px) {
-    margin-top: 30rem;
+    margin-top: 40.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: 4000px;
+    width: 100vw;
+    max-width: 100%;
     .image-link {
+      text-decoration: none;
+
       height: 500px;
+      position: relative;
+      transition: 300ms ease-in-out transform;
+    }
+    .image-link::before {
+      left: 0;
+      width: 0;
+      bottom: 0;
+      z-index: 1;
+      opacity: 0;
+      content: '';
+      height: 0.6rem;
+      position: absolute;
+      transition: 300ms ease-in-out opacity, 300ms ease-in-out width;
+      background-image: linear-gradient(27deg, #ffc593 0%, #bc7198 49%, #5a77ff 95%);
+    }
+    .image-link:hover::before {
+      opacity: 1;
+      width: 100%;
+    }
+    .image-link:hover {
+      transform: translateY(-2.4rem);
     }
   }
   @media only screen and (min-width: 768px) {
@@ -158,7 +187,7 @@ const Figure = styled.div`
       margin-left: 3.163rem;
     }
     .line {
-      width: 28.375rem;
+      width: 70%;
       margin-left: 3.063rem;
     }
     .link {
@@ -166,7 +195,7 @@ const Figure = styled.div`
       margin-left: 3.2rem;
     }
     .arrow-image {
-      margin-left: 20.063rem;
+      margin-left: 9%;
     }
   }
   @media only screen and (min-width: 768px) {
@@ -232,6 +261,7 @@ const ImageItem = styled.img`
   object-fit: cover;
 
   @media only screen and (min-width: 421px) {
+    width: 100%;
     height: 500px;
   }
   @media only screen and (min-width: 768px) {

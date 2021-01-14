@@ -5,6 +5,9 @@ const SectionContainer = styled.section`
   @media only screen and (max-width: 420px) {
     width: 100vw;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     width: 100vw;
@@ -43,8 +46,7 @@ const SectionContainer = styled.section`
 `;
 const ToggleSwitch = styled.div`
   position: relative;
-  margin-left: 60px;
-  margin-right: 60px;
+
   margin-top: 65px;
   width: 255px;
   display: flex;
