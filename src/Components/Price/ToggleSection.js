@@ -9,6 +9,13 @@ const SectionContainer = styled.section`
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     width: 100vw;
     max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.8fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      '.'
+      '.';
   }
   @media only screen and (min-width: 767px) and (max-width: 1023px) {
     width: 100vw;
@@ -26,7 +33,7 @@ const SectionContainer = styled.section`
     max-width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-rows: 1fr 2fr;
     gap: 0px 0px;
     justify-items: center;
     grid-template-areas:
@@ -85,7 +92,7 @@ const ToggleSwitch = styled.div`
     }
     &:before {
       content: '';
-      background-color: #dfdfdf;
+      background-color: #000;
     }
   }
   .toggle-switch-inner:after {
@@ -112,11 +119,15 @@ const ToggleSwitch = styled.div`
       margin-left: 0;
     }
     .toggle-switch-switch {
+      background: #fff;
       transform: translate(calc(3.7em - 100%), -50%);
     }
   }
   @media only screen and (min-width: 421px) and (max-width: 767px) {
-    margin-left: 130px;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    justify-self: center;
+    align-self: center;
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     grid-row: 1/2;
@@ -179,7 +190,6 @@ const Article = styled.article`
       width: 15.313rem;
       height: 2.5rem;
       margin-top: 2.188rem;
-
       background: #000000;
       color: #ffffff;
       text-transform: uppercase;
@@ -187,6 +197,9 @@ const Article = styled.article`
       font-weight: 700;
       letter-spacing: 2px;
       border: none;
+      &:hover {
+        background: #dfdfdf;
+      }
     }
   }
   @media only screen and (min-width: 421px) and (max-width: 767px) {
@@ -234,6 +247,9 @@ const Article = styled.article`
       font-weight: 700;
       letter-spacing: 2px;
       border: none;
+      &:hover {
+        background: #dfdfdf;
+      }
     }
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -286,6 +302,9 @@ const Article = styled.article`
       font-weight: 700;
       letter-spacing: 2px;
       border: none;
+      &:hover {
+        background: #dfdfdf;
+      }
     }
   }
   @media only screen and (min-width: 1024px) {
@@ -337,6 +356,9 @@ const Article = styled.article`
       font-weight: 700;
       letter-spacing: 2px;
       border: none;
+      &:hover {
+        background: #dfdfdf;
+      }
     }
   }
 `;
@@ -355,6 +377,9 @@ const PriceCardContainer = styled.div`
       .article-button {
         background: #ffffff;
         color: #000000;
+        &:hover {
+          background: #dfdfdf;
+        }
       }
     }
   }
@@ -371,6 +396,9 @@ const PriceCardContainer = styled.div`
       .article-button {
         background: #ffffff;
         color: #000000;
+        &:hover {
+          background: #dfdfdf;
+        }
       }
     }
   }
@@ -386,9 +414,13 @@ const PriceCardContainer = styled.div`
     ${Article}:nth-child(2) {
       background: #000000;
       color: #ffffff;
+
       .article-button {
         background: #ffffff;
         color: #000000;
+        &:hover {
+          background: #dfdfdf;
+        }
       }
     }
   }
@@ -414,6 +446,9 @@ const PriceCardContainer = styled.div`
       .article-button {
         background: #ffffff;
         color: #000000;
+        &:hover {
+          background: #dfdfdf;
+        }
       }
     }
   }

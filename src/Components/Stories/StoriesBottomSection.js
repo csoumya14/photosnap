@@ -11,10 +11,12 @@ import arrow from '../assets/shared/desktop/arrow.svg';
 
 const BottomContainer = styled.section`
   width: 100vw;
+  max-width: 100%;
   height: 33.688rem;
-  margin-top: 175.5rem;
+  margin-top: 0rem;
   display: flex;
   flex-direction: column;
+
   align-items: center;
   background: #000000;
   .invite-link {
@@ -52,48 +54,25 @@ const BottomContainer = styled.section`
   }
 
   @media only screen and (min-width: 421px) and (max-width: 767px) {
-    margin-top: 0rem;
     .invite-link {
       margin-left: 13.375rem;
     }
   }
 
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  @media only screen and (min-width: 768px) {
     display: grid;
-    width: 100vw;
     height: 284px;
-    margin-top: 0rem;
-    background: #000000;
-    color: #ffffff;
+    margin-top: 0px;
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 1fr 1.5fr 1fr;
     .invite-link {
-      text-decoration: none;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 15.62px;
-      letter-spacing: 2px;
       margin-top: 64px;
-      height: 1rem;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
       grid-row-start: 1;
       grid-row-end: 2;
       grid-column-start: 2;
       grid-column-end: 3;
     }
-    .arrow-image {
-      width: 2.63rem;
-      margin-top: 0.1rem;
-      position: absolute;
-      margin-left: 1.375rem;
-      height: 0.75rem;
-      filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg) brightness(1);
-    }
+
     .copyrightInfo {
       grid-row-start: 3;
       grid-row-end: 4;
@@ -103,25 +82,11 @@ const BottomContainer = styled.section`
   }
   @media only screen and (min-width: 1024px) {
     display: grid;
-    width: 100vw;
     height: 250px;
-    margin-top: 0rem;
     grid-template-columns: 1fr 2fr 1.9fr;
     grid-template-rows: 1fr 1fr;
     .invite-link {
-      text-decoration: none;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 15.62px;
-      letter-spacing: 2px;
-      margin-top: 64px;
       height: 1rem;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
       grid-row-start: 1;
       grid-row-end: 2;
       grid-column-start: 3;
@@ -142,7 +107,7 @@ const LogoImg = styled.img`
   margin-top: 3.5rem;
   width: 10.625rem;
   height: 1 rem;
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  @media only screen and (min-width: 768px) {
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
@@ -152,14 +117,8 @@ const LogoImg = styled.img`
     width: 170px;
   }
   @media only screen and (min-width: 1024px) {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    margin-top: 4rem;
     align-self: start;
     justify-self: end;
-    width: 170px;
   }
 `;
 
@@ -172,6 +131,9 @@ const SocialIconContainer = styled.div`
   justify-content: space-between;
   .logo-image {
     filter: sepia(100%) grayscale(100%) brightness(20);
+  }
+  .logo-image:hover {
+    filter: none;
   }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     grid-row-start: 3;
@@ -212,6 +174,7 @@ const LinkContainer = styled.div`
     &:hover,
     &:focus {
       text-decoration: underline;
+      opacity: 0.3;
     }
   }
 
@@ -223,23 +186,11 @@ const LinkContainer = styled.div`
     flex-direction: row;
     width: 315px;
     height: 0px;
-
     margin-left: 39px;
     padding: 0px;
 
     .link {
-      text-decoration: none;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 15.62px;
-      letter-spacing: 2px;
       height: 4rem;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
     }
   }
   @media only screen and (min-width: 1024px) {

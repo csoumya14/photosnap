@@ -36,6 +36,9 @@ const Container = styled.div`
     line-height: 16px;
     letter-spacing: 2px;
     color: #000000;
+    &:hover {
+      opacity: 0.3;
+    }
   }
   .invite-button {
     width: 158px;
@@ -49,6 +52,10 @@ const Container = styled.div`
     line-height: 16px;
     letter-spacing: 2px;
     justify-self: center;
+    &:hover {
+      background: #dfdfdf;
+      cursor: pointer;
+    }
   }
 `;
 

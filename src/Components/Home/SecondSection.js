@@ -4,12 +4,21 @@ import hero from '../assets/home/mobile/beautiful-stories.jpg';
 import desktopImg from '../assets/home/desktop/beautiful-stories.jpg';
 import tabScreenImg from '../assets/home/tablet/beautiful-stories.jpg';
 import arrow from '../assets/shared/desktop/arrow.svg';
-import { useViewPort } from '../CustomViewPort';
 
 const SecondSectionContainer = styled.div`
   width: 100vw;
   max-width: 100%;
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    width: 100vw;
+    height: 490px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: '. .';
+  }
+  @media only screen and (min-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -17,49 +26,56 @@ const SecondSectionContainer = styled.div`
     height: 600px;
   }
   @media only screen and (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    height: 600px;
+    grid-template-columns: 1.3fr 1fr;
   }
 `;
 const ImageSection = styled.div`
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 2;
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    overflow: hidden;
+  }
+  @media only screen and (min-width: 768px) {
+    grid-row: 1/2;
+    grid-column: 1/2;
     overflow: hidden;
     width: 273px;
   }
   @media only screen and (min-width: 1024px) {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    width: 830px;
+    width: 100%;
   }
 `;
 
 const SecondSection = styled.section`
   height: 26.2rem;
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    overflow: hidden;
+  }
+  @media only screen and (min-width: 768px) {
     width: 495px;
     height: 600px;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    overflow: hidden;
   }
   @media only screen and (min-width: 1024px) {
     width: 610px;
-    height: 600px;
   }
 `;
 const TextSection = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 2rem;
   color: #000000;
+
   .heading2 {
-    margin-top: 5rem;
-    margin-left: 2.06rem;
     width: 15.8rem;
     height: 7.5rem;
     font-size: 32px;
@@ -68,22 +84,23 @@ const TextSection = styled.div`
     letter-spacing: 3.33333px;
     text-transform: uppercase;
   }
+
   .para2 {
     width: 19.9rem;
     font-size: 15px;
     font-weight: 400;
     opacity: 0.6;
     line-height: 25px;
-    margin-left: 2.06rem;
     margin-top: 0rem;
   }
+
   .link2 {
     text-decoration: none;
+    width: 22rem;
     color: #000;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 12px;
-    margin-left: 2.06rem;
     line-height: 16px;
     letter-spacing: 2px;
     height: 1rem;
@@ -92,6 +109,7 @@ const TextSection = styled.div`
       text-decoration: underline;
     }
   }
+
   .arrow-image {
     width: 2.63rem;
     margin-top: 0.1rem;
@@ -101,114 +119,50 @@ const TextSection = styled.div`
   }
 
   @media only screen and (min-width: 421px) and (max-width: 767px) {
+    padding-left: 4rem;
     .heading2 {
-      width: 25.8rem;
+      width: 15.8rem;
       height: 5.5rem;
     }
+    .para2 {
+      width: 18.9rem;
+      padding-top: 2rem;
+    }
+
     .arrow-image {
       margin-left: 3rem;
     }
   }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  @media only screen and (min-width: 768px) {
     height: 329px;
-    margin-top: 66px;
-    margin-left: 24px;
-    margin-right: 54px;
-    margin-bottom: 135px;
+    width: 387px;
+    padding-left: 0px;
+    justify-content: space-between;
 
     .heading2 {
       height: 144px;
-      width: 387px;
+      width: 90%;
       font-size: 40px;
       line-height: 48px;
-      font-weight: 700;
       letter-spacing: 4.16667px;
-      text-transform: uppercase;
-      color: #000000;
     }
+
     .para2 {
-      width: 387px;
       height: 100px;
-      font-size: 15px;
-      font-weight: 400;
-      opacity: 0.6;
-      line-height: 25px;
+      width: 100%;
     }
+
     .link2 {
-      text-decoration: none;
-      color: #000;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 16px;
-      letter-spacing: 2px;
-      margin-top: 25px;
-      height: 1rem;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
+      width: 205px;
     }
+
     .arrow-image {
-      width: 2.63rem;
       margin-top: 0.4rem;
-      position: absolute;
-      margin-left: 1rem;
-      height: 0.75rem;
-    }
-  }
-  @media only screen and (min-width: 1024px) {
-    height: 329px;
-    margin-bottom: 135px;
-    .heading2 {
-      height: 144px;
-      margin-top: 136px;
-      margin-left: 112px;
-      width: 387px;
-      font-size: 40px;
-      line-height: 48px;
-      font-weight: 700;
-      letter-spacing: 4.16667px;
-      text-transform: uppercase;
-      color: #000000;
-    }
-    .para2 {
-      margin-left: 112px;
-      width: 387px;
-      height: 100px;
-      font-size: 15px;
-      font-weight: 400;
-      opacity: 0.6;
-      line-height: 25px;
-    }
-    .link2 {
-      text-decoration: none;
-      color: #000;
-      margin-left: 112px;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 16px;
-      letter-spacing: 2px;
-      padding-top: 40px;
-      height: 1rem;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
-    }
-    .arrow-image {
-      width: 2.63rem;
-      margin-top: 0rem;
-      position: absolute;
-      margin-left: 1rem;
-      height: 0.75rem;
     }
   }
 `;
 
 const MiddleSection = () => {
-  const [isSmallScreen] = useViewPort();
   return (
     <SecondSectionContainer>
       <ImageSection>
