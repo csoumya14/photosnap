@@ -4,7 +4,8 @@ import GlobalStyle from './Themes/globalStyles';
 import GalleryData from './Components/GalleryData';
 import FeaturesData from './Components/FeaturesData';
 import PriceData from './Components/PriceData';
-import NavBar from './Components/NavigationBar';
+//import NavBar from './Components/NavigationBar';
+import NavBar from './Components/AccessibleNavBar';
 import MainPage from './Components/Home/MainPage';
 import StoriesPage from './Components/Stories/StoriesPage';
 import FeaturesPage from './Components/Features/FeaturesPage';
@@ -18,7 +19,7 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const [width, setWidth] = useState(window.innerWidth);
-  const breakpoint = 620;
+  const breakpoint = 500;
 
   const toggleNav = () => {
     setIsOpen(!isOpen);
