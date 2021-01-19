@@ -4,7 +4,7 @@ import GlobalStyle from './Themes/globalStyles';
 import GalleryData from './Components/GalleryData';
 import FeaturesData from './Components/FeaturesData';
 import PriceData from './Components/PriceData';
-//import NavBar from './Components/NavigationBar';
+import ScrollToTop from './Components/ScrollToTop';
 import NavBar from './Components/AccessibleNavBar';
 import MainPage from './Components/Home/MainPage';
 import StoriesPage from './Components/Stories/StoriesPage';
@@ -16,14 +16,9 @@ const App = () => {
   const [image, setImage] = useState([]);
   const [feature, setFeature] = useState([]);
   const [cardInfo, setCardInfo] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
 
   const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 500;
-
-  const toggleNav = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     setImage(GalleryData);
@@ -36,26 +31,23 @@ const App = () => {
     <div>
       <Router>
         <GlobalStyle />
-        {width < breakpoint ? (
-          <NavBar isOpen={isOpen} toggleNav={toggleNav} />
-        ) : (
-          <NavBarBigScreen />
-        )}
-
-        <Switch>
-          <Route path="/stories">
-            <StoriesPage image={image} />
-          </Route>
-          <Route path="/features">
-            <FeaturesPage feature={feature} />
-          </Route>
-          <Route path="/pricing">
-            <PricingPage cardInfo={cardInfo} />
-          </Route>
-          <Route path="/">
-            <MainPage image={image} feature={feature} />
-          </Route>
-        </Switch>
+        {width < breakpoint ? <NavBar /> : <NavBarBigScreen />}
+        <ScrollToTop>
+          <Switch>
+            <Route path="/stories">
+              <StoriesPage image={image} />
+            </Route>
+            <Route path="/features">
+              <FeaturesPage feature={feature} />
+            </Route>
+            <Route path="/pricing">
+              <PricingPage cardInfo={cardInfo} />
+            </Route>
+            <Route path="/">
+              <MainPage image={image} feature={feature} />
+            </Route>
+          </Switch>
+        </ScrollToTop>
       </Router>
     </div>
   );

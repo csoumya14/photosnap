@@ -49,7 +49,8 @@ const FirstSectionText = styled.section`
   background-color: #000000;
   height: 490px;
   margin-top: -5.5px;
-
+  display: flex;
+  flex-direction: row;
   .pink-rectangle {
     position: absolute;
     width: 128px;

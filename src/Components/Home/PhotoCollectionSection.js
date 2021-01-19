@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import arrow from '../assets/shared/desktop/arrow.svg';
+import { Link } from 'react-router-dom';
 import { useViewPort } from '../CustomViewPort';
 
 const PhotoContainer = styled.div`
@@ -298,7 +299,7 @@ const PhotoSection = ({ image }) => {
     <PhotoContainer>
       {image.slice(0, 4).map((img) => {
         return (
-          <a href="#/" className="image-link" key={img.id}>
+          <Link to="/stories" className="image-link" key={img.id}>
             {isSmallScreen ? (
               <ImageItem src={img.mobileImage} alt="" />
             ) : (
@@ -316,7 +317,7 @@ const PhotoSection = ({ image }) => {
                 </span>
               </p>
             </Figure>
-          </a>
+          </Link>
         );
       })}
     </PhotoContainer>

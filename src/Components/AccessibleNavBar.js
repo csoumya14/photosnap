@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import menu from './assets/shared/mobile/menu.svg';
 import closeButton from './assets/shared/mobile/close.svg';
 import logo from './assets/shared/desktop/logo.svg';
-import { useViewPort } from './CustomViewPort';
 
 const Container = styled.div`
   display: flex;
