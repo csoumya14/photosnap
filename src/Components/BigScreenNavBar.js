@@ -69,7 +69,7 @@ const NavBarBigScreen = () => {
   return (
     <Container>
       <Link to="/" className="logo-container">
-        <Logo src={logo}></Logo>
+        <Logo src={logo} alt=""></Logo>
       </Link>
       <ul className="menu-big">
         <li className="list-item-big">

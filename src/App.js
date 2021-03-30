@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import GlobalStyle from './Themes/globalStyles';
-import GalleryData from './Components/GalleryData';
-import FeaturesData from './Components/FeaturesData';
-import PriceData from './Components/PriceData';
-import ScrollToTop from './Components/ScrollToTop';
-import NavBar from './Components/AccessibleNavBar';
-import MainPage from './Components/Home/MainPage';
-import StoriesPage from './Components/Stories/StoriesPage';
-import FeaturesPage from './Components/Features/FeaturesPage';
-import PricingPage from './Components/Price/PricingPage';
-import NavBarBigScreen from './Components/BigScreenNavBar';
+import GlobalStyle from './themes/globalStyles';
+import GalleryData from './data/GalleryData';
+import FeaturesData from './data/FeaturesData';
+import PriceData from './data/PriceData';
+import ScrollToTop from './components/ScrollToTop';
+import NavBar from './components/AccessibleNavBar';
+import MainPage from './pages/Home/Home';
+import StoriesPage from './pages/Stories/Stories';
+import FeaturesPage from './pages/Features/Features';
+import PricingPage from './pages/Price/Price';
+import NavBarBigScreen from './components/BigScreenNavBar';
 
 const App = () => {
   const [image, setImage] = useState([]);

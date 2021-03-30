@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import FirstSection from './StoriesFirstSection';
-import PhotoSection from './StoriesPhotoSection';
-import BottomSection from './StoriesBottomSection';
+import FirstSection from '../../components/Stories/StoriesFirstSection';
+import PhotoSection from '../../components/Stories/StoriesPhotoSection';
+import BottomSection from '../../components/Stories/StoriesBottomSection';
 
 const Container = styled.div`
   width: 100vw;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import TableData from '../TableData';
+import TableData from '../../data/TableData';
 import { useViewPort } from '../CustomViewPort';
 import BigScreenTableSection from './BigScreenTable';
 import SmallScreenTableSection from './SmallScreenTable';

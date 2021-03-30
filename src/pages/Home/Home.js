@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import TopSection from './FirstSection';
-import MiddleSection from './SecondSection';
-import SecondMiddleSection from './ThirdSection';
-import PhotoSection from './PhotoCollectionSection';
-import CharSection from './CharacteristicsSection';
-import BottomSection from './BottomSection';
+import TopSection from '../../components/Home/FirstSection';
+import MiddleSection from '../../components/Home/SecondSection';
+import SecondMiddleSection from '../../components/Home/ThirdSection';
+import PhotoSection from '../../components/Home/PhotoCollectionSection';
+import CharSection from '../../components/Home/CharacteristicsSection';
+import BottomSection from '../../components/Home/BottomSection';
 
 const Container = styled.div`
   width: 100vw;

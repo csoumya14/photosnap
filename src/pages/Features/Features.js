@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import FeatureFirstSection from './FirstSection';
-import MiddleSection from './FeaturesMiddleSection';
-import Beta from './BetaSection';
-import BottomSection from './BottomSection';
+import FeatureFirstSection from '../../components/Features/FirstSection';
+import MiddleSection from '../../components/Features/FeaturesMiddleSection';
+import Beta from '../../components/Features/BetaSection';
+import BottomSection from '../../components/Features/BottomSection';
 
 const Container = styled.div`
   width: 100vw;

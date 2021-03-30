@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import PriceFirstSection from './PricingFirstSection';
-import ToggleSwitchSection from './ToggleSection';
-import TableSection from './FeatureTable';
-import Beta from './BetaSection';
-import BottomSection from './BottomSection';
+import PriceFirstSection from '../../components/Price/PricingFirstSection';
+import ToggleSwitchSection from '../../components/Price/ToggleSection';
+import TableSection from '../../components/Price/FeatureTable';
+import Beta from '../../components/Price/BetaSection';
+import BottomSection from '../../components/Price/BottomSection';
 
 const Container = styled.div`
   width: 100vw;
@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const PricingPage = ({ cardInfo }) => {
   let [checked, setChecked] = useState(false);
-  const onToggleChange = (checked) => {
+  const onToggleChange = checked => {
     setChecked(checked);
   };
   return (
