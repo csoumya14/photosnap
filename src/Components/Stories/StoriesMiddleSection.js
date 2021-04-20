@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import arrow from '../assets/shared/desktop/arrow.svg';
+import arrow from '../../assets/shared/desktop/arrow.svg';
 
 const SectionContainer = styled.section`
   width: 100vw;

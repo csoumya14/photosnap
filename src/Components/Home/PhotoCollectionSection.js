@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import arrow from '../assets/shared/desktop/arrow.svg';
+import arrow from '../../assets/shared/desktop/arrow.svg';
 import { Link } from 'react-router-dom';
 import { useViewPort } from '../CustomViewPort';
 
@@ -297,7 +297,7 @@ const PhotoSection = ({ image }) => {
 
   return (
     <PhotoContainer>
-      {image.slice(0, 4).map((img) => {
+      {image.slice(0, 4).map(img => {
         return (
           <Link to="/stories" className="image-link" key={img.id}>
             {isSmallScreen ? (

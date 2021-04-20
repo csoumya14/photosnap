@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import arrow from '../assets/shared/desktop/arrow.svg';
+import arrow from '../../assets/shared/desktop/arrow.svg';
 import { useViewPort } from '../CustomViewPort';
 
 const PhotoContainer = styled.section`
@@ -276,7 +276,7 @@ const PhotoSection = ({ image }) => {
   const [isSmallScreen] = useViewPort();
   return (
     <PhotoContainer>
-      {image.map((img) => {
+      {image.map(img => {
         return (
           <a href="#/" key={img.id} className="image-link">
             {isSmallScreen ? (

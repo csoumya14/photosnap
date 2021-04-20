@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import check from '../assets/pricing/desktop/check.svg';
+import check from '../../assets/pricing/desktop/check.svg';
 
 const TableSection = styled.section`
   width: 90%;
@@ -61,7 +61,7 @@ const SmallScreenTableSection = ({ tableData }) => {
     <TableSection>
       <h5 className="table-heading">The features</h5>
       <div className="line"></div>
-      {tableData.map((info) => {
+      {tableData.map(info => {
         return (
           <Table key={info.id}>
             <colgroup span="3"></colgroup>

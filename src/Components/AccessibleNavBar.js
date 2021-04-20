@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import menu from './assets/shared/mobile/menu.svg';
-import closeButton from './assets/shared/mobile/close.svg';
-import logo from './assets/shared/desktop/logo.svg';
+import menu from './../assets/shared/mobile/menu.svg';
+import closeButton from './../assets/shared/mobile/close.svg';
+import logo from './../assets/shared/desktop/logo.svg';
 
 const Container = styled.div`
   display: flex;
@@ -116,7 +116,7 @@ const NavBar = () => {
   const activatorRef = useRef(null);
   const dropdownListRef = useRef(null);
 
-  const wrapKeyHandler = (event) => {
+  const wrapKeyHandler = event => {
     if (event.key === 'Escape' && isOpen) {
       setIsOpen(false);
       activatorRef.current.focus();
@@ -127,7 +127,7 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
-  const clickOutsideHandler = (event) => {
+  const clickOutsideHandler = event => {
     if (
       dropdownListRef.current.contains(event.target) ||
       activatorRef.current.contains(event.target)

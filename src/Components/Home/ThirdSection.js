@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import hero from '../assets/home/mobile/designed-for-everyone.jpg';
-import desktopImg from '../assets/home/desktop/designed-for-everyone.jpg';
-import tabScreenImg from '../assets/home/tablet/designed-for-everyone.jpg';
-import arrow from '../assets/shared/desktop/arrow.svg';
+import hero from '../../assets/home/mobile/designed-for-everyone.jpg';
+import desktopImg from '../../assets/home/desktop/designed-for-everyone.jpg';
+import tabScreenImg from '../../assets/home/tablet/designed-for-everyone.jpg';
+import arrow from '../../assets/shared/desktop/arrow.svg';
 
 const SecondSectionContainer = styled.div`
   width: 100vw;

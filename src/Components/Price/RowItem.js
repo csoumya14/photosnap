@@ -1,5 +1,5 @@
 import React from 'react';
-import check from '../assets/pricing/desktop/check.svg';
+import check from '../../assets/pricing/desktop/check.svg';
 import styled from 'styled-components';
 
 const Row = styled.tr`

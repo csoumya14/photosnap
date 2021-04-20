@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import hero from '../assets/pricing/mobile/hero.jpg';
-import tabScreenImg from '../assets/pricing/tablet/hero.jpg';
-import desktopImg from '../assets/pricing/desktop/hero.jpg';
+import hero from '../../assets/pricing/mobile/hero.jpg';
+import tabScreenImg from '../../assets/pricing/tablet/hero.jpg';
+import desktopImg from '../../assets/pricing/desktop/hero.jpg';
+import TopImageSection from '../TopImageSection';
+import PinkRectangle from '../PinkRectangle';
 
 const SectionContainer = styled.section`
   @media only screen and (max-width: 420px) {
@@ -43,33 +45,7 @@ const SectionContainer = styled.section`
     grid-template-areas: '. .';
   }
 `;
-const ImageContainer = styled.div`
-  @media only screen and (max-width: 420px) {
-    width: 100vw;
-    height: 294px;
-    max-width: 100%;
-    overflow: hidden;
-  }
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    object-fit: cover;
-    grid-row: 1/2;
-    grid-column: 2/3;
-    overflow: hidden;
-  }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    object-fit: cover;
-    height: 18.375rem;
-    grid-row: 1/2;
-    grid-column: 2/3;
-  }
-  @media only screen and (min-width: 1024px) {
-    object-fit: cover;
-    overflow: hidden;
 
-    grid-row: 1/2;
-    grid-column: 2/3;
-  }
-`;
 const TextSection = styled.div`
   @media only screen and (max-width: 420px) {
     width: 100vw;
@@ -77,14 +53,9 @@ const TextSection = styled.div`
     background: #000000;
     height: 300px;
     display: flex;
+    margin-top: -6px;
     flex-direction: column;
-    .pink-rectangle {
-      width: 128px;
-      height: 6px;
-      left: 33px;
-      position: absolute;
-      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
-    }
+
     .heading {
       font-size: 32px;
       line-height: 40px;
@@ -138,14 +109,6 @@ const TextSection = styled.div`
     display: flex;
     flex-direction: column;
 
-    .pink-rectangle {
-      width: 6px;
-      height: 144px;
-      position: absolute;
-      margin-left: 0px;
-      margin-top: 173px;
-      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
-    }
     .heading {
       font-size: 40px;
       line-height: 45px;
@@ -172,14 +135,6 @@ const TextSection = styled.div`
     display: flex;
     flex-direction: column;
 
-    .pink-rectangle {
-      width: 6px;
-      height: 144px;
-      position: absolute;
-      margin-left: 0px;
-      margin-top: 173px;
-      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
-    }
     .heading {
       font-size: 40px;
       line-height: 45px;
@@ -203,21 +158,17 @@ const TextSection = styled.div`
 `;
 
 const PriceFirstSection = () => {
+  const altText = 'a woman holding camera during sunset or sunrise';
   return (
     <SectionContainer>
-      <ImageContainer>
-        <picture className="picture">
-          <source media="(min-width:1024px)" srcSet={desktopImg}></source>
-          <source media="(min-width:500px)" srcSet={tabScreenImg}></source>
-          <img
-            src={hero}
-            alt=" a woman holding camera during sunset or sunrise"
-            className="hero-image"
-          ></img>
-        </picture>
-      </ImageContainer>
+      <TopImageSection
+        hero={hero}
+        desktopImg={desktopImg}
+        tabScreenImg={tabScreenImg}
+        altText={altText}
+      />
       <TextSection>
-        <div className="pink-rectangle"></div>
+        <PinkRectangle />
         <h1 className="heading">Pricing</h1>
         <p className="para">
           Create a your stories. Photosnap is a platform for photographers and visual storytellers.
@@ -229,3 +180,33 @@ const PriceFirstSection = () => {
 };
 
 export default PriceFirstSection;
+
+/*
+const ImageContainer = styled.div`
+  @media only screen and (max-width: 420px) {
+    width: 100vw;
+    height: 294px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    object-fit: cover;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    overflow: hidden;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    object-fit: cover;
+    height: 18.375rem;
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+  @media only screen and (min-width: 1024px) {
+    object-fit: cover;
+    overflow: hidden;
+
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+`;
+*/

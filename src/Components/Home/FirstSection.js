@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import arrow from '../assets/shared/desktop/arrow.svg';
-import hero from '../assets/home/mobile/create-and-share.jpg';
-import desktopImg from '../assets/home/desktop/create-and-share.jpg';
-import tabScreenImg from '../assets/home/tablet/create-and-share.jpg';
+
+import hero from '../../assets/home/mobile/create-and-share.jpg';
+import desktopImg from '../../assets/home/desktop/create-and-share.jpg';
+import tabScreenImg from '../../assets/home/tablet/create-and-share.jpg';
+import TopImageSection from '../TopImageSection';
+import GetAnInvite from '../GetAnInviteLink';
+import PinkRectangle from '../PinkRectangle';
 
 const FirstSectionContainer = styled.div`
   width: 100vw;
@@ -28,22 +31,6 @@ const FirstSectionContainer = styled.div`
     grid-template-columns: 1fr 1.3fr;
   }
 `;
-const ImageSection = styled.div`
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    object-fit: cover;
-    grid-row: 1/2;
-    grid-column: 2/3;
-    height: 490px;
-    overflow: hidden;
-  }
-  @media only screen and (min-width: 768px) {
-    object-fit: cover;
-    grid-row: 1/2;
-    grid-column-start: 2/3;
-    height: 650px;
-    overflow: hidden;
-  }
-`;
 
 const FirstSectionText = styled.section`
   background-color: #000000;
@@ -51,13 +38,7 @@ const FirstSectionText = styled.section`
   margin-top: -5.5px;
   display: flex;
   flex-direction: row;
-  .pink-rectangle {
-    position: absolute;
-    width: 128px;
-    height: 6px;
-    left: 33px;
-    background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
-  }
+
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     object-fit: cover;
     grid-row: 1/2;
@@ -73,14 +54,6 @@ const FirstSectionText = styled.section`
     height: 650px;
     grid-row: 1/2;
     grid-column: 1/2;
-    .pink-rectangle {
-      position: absolute;
-      width: 6px;
-      height: 304px;
-      left: 0px;
-      margin-top: 174px;
-      background: linear-gradient(26.57deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
-    }
   }
 `;
 const TextSection = styled.div`
@@ -135,9 +108,6 @@ const TextSection = styled.div`
   }
 
   @media only screen and (min-width: 421px) and (max-width: 767px) {
-    .pink-rectangle {
-      margin-left: 53px;
-    }
     .para1 {
       margin-top: 2rem;
     }
@@ -178,33 +148,24 @@ const TextSection = styled.div`
 `;
 
 const TopSection = () => {
+  const altText = 'a woman holding camera during sunset or sunrise';
+  const heading = 'Create and share your photo stories.';
+  const paragraph =
+    'Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others';
   return (
     <FirstSectionContainer>
-      <ImageSection>
-        <picture className="picture">
-          <source media="(min-width:1024px)" srcSet={desktopImg}></source>
-          <source media="(min-width:500px)" srcSet={tabScreenImg}></source>
-          <img
-            src={hero}
-            alt=" a woman holding camera during sunset or sunrise"
-            className="hero-image"
-          ></img>
-        </picture>
-      </ImageSection>
+      <TopImageSection
+        hero={hero}
+        desktopImg={desktopImg}
+        tabScreenImg={tabScreenImg}
+        altText={altText}
+      />
       <FirstSectionText>
-        <div className="pink-rectangle"></div>
+        <PinkRectangle />
         <TextSection>
-          <h1 className="heading1"> Create and share your photo Stories.</h1>
-          <p className="para1">
-            Photosnap is a platform for photographers and visual storytellers. We make it easy to
-            share photos, tell stories and connect with others.
-          </p>
-          <a href="#/" className="link1">
-            Get an invite{' '}
-            <span>
-              <img className="arrow-image" src={arrow} alt=""></img>
-            </span>
-          </a>
+          <h1 className="heading1">{heading}</h1>
+          <p className="para1">{paragraph}</p>
+          <GetAnInvite />
         </TextSection>
       </FirstSectionText>
     </FirstSectionContainer>

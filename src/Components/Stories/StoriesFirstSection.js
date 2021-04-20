@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import hero from '../assets/stories/mobile/moon-of-appalacia.jpg';
-import desktopImg from '../assets/stories/desktop/moon-of-appalacia.jpg';
-import tabScreenImg from '../assets/stories/tablet/moon-of-appalacia.jpg';
+import hero from '../../assets/stories/mobile/moon-of-appalacia.jpg';
+import desktopImg from '../../assets/stories/desktop/moon-of-appalacia.jpg';
+import tabScreenImg from '../../assets/stories/tablet/moon-of-appalacia.jpg';
 
 import MiddleSection from './StoriesMiddleSection';
 
 const FirstSectionContainer = styled.section`
   width: 100vw;
   max-width: 100%;
-
+  .container {
+    position: absolute;
+    border: 1px solid red;
+  }
   @media only screen and (min-width: 421px) and (max-width: 767px) {
     border: 1px solid transparent;
   }
@@ -27,6 +30,7 @@ const FirstSectionContainer = styled.section`
     height: 650px;
   }
 `;
+
 const ImageSection = styled.div`
   width: 100vw;
   max-width: 100%;
@@ -94,9 +98,3 @@ const FirstSection = () => {
 };
 
 export default FirstSection;
-
-/*
-<ImageSection>
-        
-      </ImageSection>
-      */

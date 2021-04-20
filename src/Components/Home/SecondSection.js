@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import hero from '../assets/home/mobile/beautiful-stories.jpg';
-import desktopImg from '../assets/home/desktop/beautiful-stories.jpg';
-import tabScreenImg from '../assets/home/tablet/beautiful-stories.jpg';
-import arrow from '../assets/shared/desktop/arrow.svg';
+import hero from '../../assets/home/mobile/beautiful-stories.jpg';
+import desktopImg from '../../assets/home/desktop/beautiful-stories.jpg';
+import tabScreenImg from '../../assets/home/tablet/beautiful-stories.jpg';
+import arrow from '../../assets/shared/desktop/arrow.svg';
 
 const SecondSectionContainer = styled.div`
   width: 100vw;
