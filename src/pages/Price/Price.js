@@ -4,7 +4,7 @@ import PriceFirstSection from '../../components/Price/PricingFirstSection';
 import ToggleSwitchSection from '../../components/Price/ToggleSection';
 import TableSection from '../../components/Price/FeatureTable';
 import Beta from '../../components/BetaSection';
-import BottomSection from '../../components/Home/BottomSection';
+import BottomSection from '../../components/BottomSection';
 
 const Container = styled.div`
   width: 100vw;

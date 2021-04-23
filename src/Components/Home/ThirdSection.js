@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import hero from '../../assets/home/mobile/designed-for-everyone.jpg';
 import desktopImg from '../../assets/home/desktop/designed-for-everyone.jpg';
 import tabScreenImg from '../../assets/home/tablet/designed-for-everyone.jpg';
-import arrow from '../../assets/shared/desktop/arrow.svg';
+import TopTextSection from '../TopTextSection';
 
 const SecondSectionContainer = styled.div`
   width: 100vw;
@@ -63,85 +63,14 @@ const ThirdSection = styled.div`
     width: 610px;
   }
 `;
-const TextSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  color: #000000;
-
-  .heading3 {
-    width: calc(100% - 70px);
-    height: 7.5rem;
-    font-size: 32px;
-    line-height: 40px;
-    font-weight: 700;
-    letter-spacing: 3.33333px;
-    text-transform: uppercase;
-  }
-
-  .para3 {
-    width: calc(100% - 70px);
-    font-size: 15px;
-    font-weight: 400;
-    opacity: 0.6;
-    line-height: 25px;
-    margin-top: 0rem;
-  }
-
-  .link3 {
-    text-decoration: none;
-    width: calc(100% - 70px);
-    color: #000;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 2px;
-    height: 1rem;
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
-
-  .arrow-image {
-    width: 2.63rem;
-    margin-top: 0.1rem;
-    position: absolute;
-    margin-left: 1rem;
-    height: 0.75rem;
-  }
-
-  @media only screen and (min-width: 768px) {
-    height: 329px;
-    width: 387px;
-    padding-left: 0px;
-    justify-content: center;
-
-    .heading3 {
-      height: 96px;
-      width: 100%;
-      font-size: 40px;
-      line-height: 48px;
-      letter-spacing: 4.16667px;
-    }
-    .para3 {
-      width: 100%;
-    }
-
-    .link3 {
-      width: 100%;
-    }
-
-    .arrow-image {
-      margin-top: 0.4rem;
-    }
-  }
-`;
 
 const SecondMiddleSection = () => {
+  const heading = 'Designed For Everyone';
+  const paragraph =
+    'Photosnap can help you create stories that resonate with your audience. Our tool is designed for photographers of all level, brands, businesses you name it.';
+  const linkName = 'view the stories';
+  const showInviteLink = true;
+  const blackBackgroundColor = false;
   return (
     <SecondSectionContainer>
       <ImageContainer>
@@ -156,19 +85,13 @@ const SecondMiddleSection = () => {
         </picture>
       </ImageContainer>
       <ThirdSection>
-        <TextSection>
-          <h1 className="heading3">Designed For Everyone</h1>
-          <p className="para3">
-            Photosnap can help you create stories that resonate with your audience. Our tool is
-            designed for photographers of all level, brands, businesses you name it.
-          </p>
-          <a href="#/" className="link3">
-            View the stories{' '}
-            <span>
-              <img className="arrow-image" src={arrow} alt=""></img>
-            </span>
-          </a>
-        </TextSection>
+        <TopTextSection
+          heading={heading}
+          paragraph={paragraph}
+          linkName={linkName}
+          showInviteLink={showInviteLink}
+          blackBackgroundColor={blackBackgroundColor}
+        />
       </ThirdSection>
     </SecondSectionContainer>
   );

@@ -6,12 +6,6 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 
 const Figure = styled.figure`
@@ -79,12 +73,12 @@ const MiddleSection = ({ feature }) => {
   return (
     <SectionContainer>
       <FigureContainer>
-        {feature.map((ftr) => {
+        {feature.map(featureItem => {
           return (
-            <Figure key={ftr.id}>
-              <ImageItem src={ftr.featureImage} alt="" />
-              <figcaption className="caption">{ftr.featureTitle}</figcaption>
-              <p className="text">{ftr.featureText}</p>
+            <Figure key={featureItem.id}>
+              <ImageItem src={featureItem.featureImage} alt="" />
+              <figcaption className="caption">{featureItem.featureTitle}</figcaption>
+              <p className="text">{featureItem.featureText}</p>
             </Figure>
           );
         })}

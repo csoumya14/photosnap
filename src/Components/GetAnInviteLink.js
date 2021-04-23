@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const LinkElement = styled.a`
   text-decoration: none;
   width: calc(100% - 70px);
-  color: #fff;
+  color: ${({ blackBackgroundColor }) => (blackBackgroundColor ? 'white' : 'black')};
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
@@ -15,34 +15,34 @@ const LinkElement = styled.a`
   &:focus {
     text-decoration: underline;
   }
-  .arrow-image {
-    width: 2.63rem;
-    margin-top: 0.2rem;
-    position: absolute;
-    margin-left: 1rem;
-    height: 0.75rem;
-    filter: invert(1) sepia(0) saturate(1) hue-rotate(0deg) brightness(1);
-  }
-  @media only screen and (min-width: 421px) and (max-width: 767px) {
-    .arrow-image {
-      margin-left: 1rem;
-    }
-  }
+
   @media only screen and (min-width: 768px) {
     width: 387px;
     margin-top: 25px;
-
-    .arrow-image {
-      margin-top: 5px;
-    }
   }
 `;
-const GetAnInvite = () => {
+const ArrowImage = styled.img`
+  width: 2.63rem;
+  filter: ${({ blackBackgroundColor }) =>
+    blackBackgroundColor ? 'invert(1) sepia(0) saturate(1) hue-rotate(0deg) brightness(1)' : ''};
+  margin-top: 0.2rem;
+  position: absolute;
+  margin-left: 1rem;
+  height: 0.75rem;
+
+  @media only screen and (min-width: 421px) and (max-width: 767px) {
+    margin-left: 1rem;
+  }
+  @media only screen and (min-width: 768px) {
+    margin-top: 5px;
+  }
+`;
+const GetAnInvite = ({ linkName, blackBackgroundColor }) => {
   return (
-    <LinkElement href="#/">
-      Get an invite{' '}
+    <LinkElement href="#/" blackBackgroundColor={blackBackgroundColor}>
+      {linkName}
       <span>
-        <img className="arrow-image" src={arrow} alt=""></img>
+        <ArrowImage blackBackgroundColor={blackBackgroundColor} src={arrow} alt=""></ArrowImage>
       </span>
     </LinkElement>
   );

@@ -16,7 +16,6 @@ const App = () => {
   const [image, setImage] = useState([]);
   const [feature, setFeature] = useState([]);
   const [cardInfo, setCardInfo] = useState([]);
-
   const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 500;
 

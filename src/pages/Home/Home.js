@@ -5,7 +5,7 @@ import MiddleSection from '../../components/Home/SecondSection';
 import SecondMiddleSection from '../../components/Home/ThirdSection';
 import PhotoSection from '../../components/Home/PhotoCollectionSection';
 import CharSection from '../../components/Home/CharacteristicsSection';
-import BottomSection from '../../components/Home/BottomSection';
+import BottomSection from '../../components/BottomSection';
 
 const Container = styled.div`
   width: 100vw;

@@ -75,12 +75,15 @@ const TextSection = styled.div`
   }
 `;
 const BetaText = () => {
+  const linkName = 'Get an invite';
+  const blackBackgroundColor = true;
+
   return (
     <TextSection>
       <div className="pink-rectangle"></div>
       <h1 className="heading">We're in beta. Get your invite today!</h1>
       <div className="link">
-        <GetAnInvite />
+        <GetAnInvite linkName={linkName} blackBackgroundColor={blackBackgroundColor} />
       </div>
     </TextSection>
   );
