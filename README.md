@@ -14,7 +14,7 @@ This project was part of front-end mentor challenge(https://www.frontendmentor.i
 
 - Both css-grid layout and css-flexbox layout is used.
 
-- Two different types of html table is used for small screen and big screen.
+- Two different types of html table are used for small screen and big screen.
 
 ## Tech Used / Dependencies
 
