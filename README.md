@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project was part of front-end mentor challenge(https://www.frontendmentor.io/challenges).
+This project is created as a part of front-end mentor challenge(https://www.frontendmentor.io/challenges).
 
 #### LIVE LINK : (https://photosnap-deploy.vercel.app/)
 
